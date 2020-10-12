@@ -41,4 +41,4 @@ const mapDispatchToPros = (dispatch) => {
 export default compose(
     withBookstoreService(),
     connect(mapStateToProps, mapDispatchToPros)
-)(BookList);
+)(BookList);dsadas
