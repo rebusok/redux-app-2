@@ -14,7 +14,7 @@ class BookList extends Component {
         this.props.booksLoaded(data);
     }
     render(){
-        const {books} = this.props;
+        const { books } = this.props;
         return (
             <ul>
                 {
