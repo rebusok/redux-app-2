@@ -7,8 +7,7 @@ import ErrorBoundry from './components/error-bondry';
 import BookstoreService from './services/bookstore-service';
 import {BookstoreServiseProvider} from './components/bookstore-service-context';
 import store from './store';
-ReactDOM.render(<App />,
-  document.getElementById('root'));
+
 
 
 
