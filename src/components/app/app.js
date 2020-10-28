@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-
-
-export default class App extends Component {
-    render(){
-        return(
-            <h1>Hello world</h1>
-        )
-    }
-}
-=======
 import React from 'react';
 import { Route, Switch} from 'react-router-dom';
 import {HomePage, CardPage} from '../pages';
@@ -29,4 +17,3 @@ const App = ({bookstoreService}) => {
 } 
 
 export default App;
->>>>>>> cef7b874758f4fb5a15bf739a594bf2e2ea73d1c
