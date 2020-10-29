@@ -4,6 +4,13 @@ const booksLoaded = (newBooks) => {
         payload: newBooks
     };
 };
+
+const booksReq = () => {
+    return {
+        type: 'BOOKS_REQ'
+    }
+}
 export {
-    booksLoaded
+    booksLoaded,
+    booksReq
 }
