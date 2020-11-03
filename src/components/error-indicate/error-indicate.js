@@ -14,7 +14,7 @@ const ErrorIndicate = () => {
                 something has gone terribly wrong 
             </span>
             <span>
-                (but we already sent droids to fix it)
+                (but we already sent to fix it)
             </span>
         </div>
     )

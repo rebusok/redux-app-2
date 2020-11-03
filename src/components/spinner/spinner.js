@@ -9,8 +9,7 @@ const Spinner = () => {
             <div></div>
             <div><div></div></div>
             <div><div></div></div>
-            </div></div>
-            Spinner
+            </div></div>            
         </div>
     )
 }

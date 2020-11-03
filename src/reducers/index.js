@@ -1,24 +1,16 @@
-const initialState = {
-    books: [],
-    loading: true
-}
+import updateBookList from './book-list';
+import updateShopingCart from './shoping-cart';
 
-const reducer = (state = initialState, action) => {
 
-    switch (action.type){
-        case "BOOKS_REQ":
-            return{
-                books: [],
-                loading: true
-            }
-        case 'BOOKS_LOADED':
-            return {
-                books: action.payload,
-                loading: false
-            };
-        default:
-            return state;
-    }    
+
+
+
+const reducer = (state, action) => {
+    
+    return {
+        bookList: updateBookList(state, action),
+        shopingCart: updateShopingCart(state, action)
+    }   
 }
 
 export default reducer;
