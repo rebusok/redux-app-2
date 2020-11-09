@@ -2,7 +2,8 @@ const updateShopingCart = (state, action) => {
     if (state === undefined){
         return {
             cartItems: [],
-            orderTotal: 220
+            orderTotal: 0, 
+            oderCount: 0
         }
     }
     switch(action.type){
@@ -57,6 +58,18 @@ const updateCartItem = (book, item = {}, quantily) => {
         total: total + quantily*book.price
     }
 }
+const updateTotal = (cartItems) => {
+    if (cartItems.length < 1){
+        return 0
+    }
+    return cartItems.map(i => i.total).reduce((a, b) => a +b)         
+}
+const updateCount = (cartItems) => {
+    if (cartItems.length < 1){
+        return 0
+    }
+    return cartItems.map(i => i.count).reduce((a, b) => a +b)  
+}
 
 const updateOrder = (state, bookId, quantily) => {
     
@@ -65,10 +78,13 @@ const updateOrder = (state, bookId, quantily) => {
     const itemIndex = cartItems.findIndex(({id}) => id === bookId);
     const item = cartItems[itemIndex];
     
-    const newItem = updateCartItem(book, item, quantily)
+    const newItem = updateCartItem(book, item, quantily);
+    const newcardItem = updateCartItems(cartItems, newItem, itemIndex);
     return{
-        orderTotal: 0,
-        cartItems: updateCartItems(cartItems, newItem, itemIndex)
+        
+        cartItems: updateCartItems(cartItems, newItem, itemIndex),
+        orderTotal: updateTotal(newcardItem),
+        oderCount: updateCount(newcardItem)
     }; 
 }
 
